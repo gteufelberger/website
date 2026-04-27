@@ -66,6 +66,13 @@ if (replacedHero && !images[replacedHero])
       </div>
 
       <h1 class="mt-4">{post.data.title}</h1>
+      {
+        post.data.description && (
+          <p class="mt-2 text-lg text-base-600 dark:text-base-400">
+            {post.data.description}
+          </p>
+        )
+      }
       <Content />
     </BlogPost>
   </main>
