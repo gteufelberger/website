@@ -1,0 +1,92 @@
+---
+title: "Wake up, Claude!"
+description: 'Saying "good morning" to Claude for better reset windows'
+published: true
+tags: []
+---
+
+Depending on how much you use AI tools for code generation and related tasks, you might have already experienced the dreaded message:\
+`"Usage limit hit - resets at <timestamp>"`
+
+Claude for example has a 5 hour window, meaning that 5 hours after your first message the usage limit resets. For a normal 8 hour workday that means you basically have at most two usage windows.
+
+```
+| 9:00 | 10:00 | 11:00 | 12:00 | 13:00 | 14:00 | 15:00 | 16:00 | 17:00 | 18:00 | 19:00 |
+| work                         | break | work                          |               |
+| usage window 1                       | usage window 2                                |
+```
+
+However, what if we could shift the usage limit reset to further in the day.
+For example, if we send the first message to Claude at 5:30 in the morning, our window would already reset by 10:30, the next at 15:30, and then 20:30, giving us 3 limits during a workday.
+
+```
+| ....... | 9:00 | 10:00 | 11:00 | 12:00 | 13:00 | 14:00 | 15:00 | 16:00 | 17:00 | 18:00 | 19:00 |
+| ....... | work                         | break | work                          |               |
+| ... usage window 1 | usage window 2                        | usage window 3                 ...|
+```
+
+Now, getting up at 5:30 in the morning just to send a message to an LLM doesn't sound like the most fun thing to do but thankfully we can automate it :)\
+For this we set up a systemd service that sends a message to Claude using the `--print` flag.
+
+We have a service `claude-wakeup.service`
+
+```toml
+[Unit]
+Description=Wakes up Claude for the reset window
+
+[Service]
+Type=oneshot
+ExecStart=/root/.local/bin/claude --print "Good Morning, Claude"
+```
+
+And a timer `claude-wakeup.timer` that triggers at 5:30, 10:30, and 15:30.
+
+```toml
+[Unit]
+Description=Wakes up Claude for the reset window
+
+[Timer]
+OnCalendar=*-*-* 05:30:00
+OnCalendar=*-*-* 10:30:00
+OnCalendar=*-*-* 15:30:00
+
+[Install]
+WantedBy=timers.target
+```
+
+Next install the unit files
+
+```sh
+sudo cp claude-wakeup.service /etc/systemd/system/
+sudo cp claude-wakeup.timer /etc/systemd/system/
+```
+
+Reload
+
+```sh
+sudo systemctl daemon-reload
+```
+
+and enable
+
+```sh
+sudo systemctl enable --now claude-wakeup.timer
+```
+
+And then when we check the systemd journal after a while and see
+
+```
+root@ubuntu:~# journalctl -u claude-wakeup.service
+Apr 24 10:30:21 ubuntu systemd[1]: Starting claude-wakeup.service - Wakes up Claude for the reset window...
+Apr 24 10:30:24 ubuntu claude[2011146]: Good morning! How can I help you today?
+Apr 24 10:30:25 ubuntu systemd[1]: claude-wakeup.service: Deactivated successfully.
+Apr 24 10:30:25 ubuntu systemd[1]: Finished claude-wakeup.service - Wakes up Claude for the reset window.
+Apr 24 10:30:25 ubuntu systemd[1]: claude-wakeup.service: Consumed 2.249s CPU time.
+Apr 24 15:30:21 ubuntu systemd[1]: Starting claude-wakeup.service - Wakes up Claude for the reset window...
+Apr 24 15:30:25 ubuntu claude[2020220]: Good morning! How can I help you today?
+Apr 24 15:30:26 ubuntu systemd[1]: claude-wakeup.service: Deactivated successfully.
+Apr 24 15:30:26 ubuntu systemd[1]: Finished claude-wakeup.service - Wakes up Claude for the reset window.
+Apr 24 15:30:26 ubuntu systemd[1]: claude-wakeup.service: Consumed 2.690s CPU time.
+```
+
+Our systemd service is now greeting Claude and in the process starting the timer for the reset window, optimising the reset windows based on our workflows :>
