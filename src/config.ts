@@ -10,6 +10,10 @@ export const SITE_FAVICON = "🛰️";
 // Footer
 // (c) <YEAR> <NAME> - LICENSE
 export const NAME = "Georg Teufelberger";
+
+// will be used in the footer as the license of the content (e.g. "All right reserved" or "CC-BY-SA 4.0")
+// export const LICENSE = "MIT licensed.";
+
 export const SOURCE_LINK = "https://github.com/gteufelberger/website";
 
 // Colours
