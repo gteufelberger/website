@@ -1,7 +1,14 @@
-import { safeGetDOM } from "@astro-community/astro-embed-utils";
+import { makeSafeGetter } from "@astro-community/astro-embed-utils";
+import { parse } from "node-html-parser";
+
+const safeGetDOM = makeSafeGetter((res) =>
+  res.text().then((text) => parse(text)),
+);
 
 /** Helper to get the `content` attribute of an element. */
-const getContent = (el: Element | null) => el?.getAttribute("content");
+const getContent = (
+  el: { getAttribute(name: string): string | undefined } | null,
+) => el?.getAttribute("content");
 /** Helper to filter out insecure or non-absolute URLs. */
 const urlOrNull = (url: string | null | undefined) =>
   url?.slice(0, 8) === "https://" ? url : null;
