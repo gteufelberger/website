@@ -13,6 +13,8 @@ const posts = await getBlogPosts();
 // turn posts into an object with slugs as keys, and title and description as values
 // { slug: { title, description } }
 
+type PageData = { title: string; description: string; customOGImage?: string };
+
 const pages = posts.reduce(
   (acc, post) => {
     acc[post.id] = {
@@ -28,10 +30,7 @@ const pages = posts.reduce(
     };
     return acc;
   },
-  {} as Record<
-    string,
-    { title: string; description: string; customOGImage?: string }
-  >,
+  {} as Record<string, PageData>,
 );
 
 function hexToRgb(hex: string): [number, number, number] {
