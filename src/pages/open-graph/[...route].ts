@@ -44,11 +44,7 @@ function hexToRgb(hex: string): [number, number, number] {
 const accentColor = colors[ACCENT_COLOR];
 const baseColor = colors[BASE_COLOR];
 
-export const { getStaticPaths, GET } = OGImageRoute({
-  // Tell us the name of your dynamic route segment.
-  // In this case it’s `route`, because the file is named `[...route].ts`.
-  param: "route",
-
+export const { getStaticPaths, GET } = await OGImageRoute({
   // A collection of pages to generate images for.
   // The keys of this object are used to generate the path for that image.
   // In this example, we generate one image at `/open-graph/example.png`.
@@ -56,8 +52,7 @@ export const { getStaticPaths, GET } = OGImageRoute({
     main: {
       title: SITE_TITLE,
       description: SITE_DESCRIPTION,
-      useHero: false,
-    },
+    } as PageData,
     ...pages,
   },
 
