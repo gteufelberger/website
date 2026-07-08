@@ -6,7 +6,7 @@ import rehypeMathjax from "rehype-mathjax";
 
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import svelte from "@astrojs/svelte";
 import { BASE, SITE } from "./src/config.ts";
 
@@ -24,6 +24,7 @@ import ExcalidrawEmbed from "./src/embeds/excalidraw/embed";
 // https://astro.build/config
 export default defineConfig({
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         $components: resolve("./src/components"),
@@ -43,7 +44,6 @@ export default defineConfig({
     }),
     mdx(),
     sitemap(),
-    tailwind(),
     svelte(),
   ],
 
