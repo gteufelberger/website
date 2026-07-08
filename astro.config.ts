@@ -10,16 +10,12 @@ import tailwindcss from "@tailwindcss/vite";
 import svelte from "@astrojs/svelte";
 import { BASE, SITE } from "./src/config.ts";
 
-import customEmbeds from "astro-custom-embeds";
+import embeds from "astro-embed/integration";
 
 import {
   transformerMetaHighlight,
   transformerNotationHighlight,
 } from "@shikijs/transformers";
-
-import LinkCardEmbed from "./src/embeds/link-card/embed";
-import YoutubeEmbed from "./src/embeds/youtube/embed";
-import ExcalidrawEmbed from "./src/embeds/excalidraw/embed";
 
 // https://astro.build/config
 export default defineConfig({
@@ -38,14 +34,7 @@ export default defineConfig({
     },
   },
 
-  integrations: [
-    customEmbeds({
-      embeds: [ExcalidrawEmbed, YoutubeEmbed, LinkCardEmbed],
-    }),
-    mdx(),
-    sitemap(),
-    svelte(),
-  ],
+  integrations: [embeds(), mdx(), sitemap(), svelte()],
 
   markdown: {
     shikiConfig: {
