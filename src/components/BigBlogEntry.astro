@@ -9,8 +9,10 @@ const { title, description, pubDate, slug, heroImage, tags, noImage } =
 ---
 
 <article
-  class={"relative isolate flex flex-col gap-8 lg:flex-row group mt-8" +
-    (noImage || !SHOW_IMAGES || !heroImage ? "" : " lg:grid lg:grid-cols-2")}
+  class={
+    "relative isolate flex flex-col gap-8 lg:flex-row group mt-8" +
+    (noImage || !SHOW_IMAGES || !heroImage ? "" : " lg:grid lg:grid-cols-2")
+  }
 >
   {
     noImage || !SHOW_IMAGES || !heroImage ? null : (
