@@ -1,5 +1,12 @@
 ---
-import { BASE, NAME, SOCIAL_LINKS, SOURCE_LINK } from "../config.ts";
+import {
+  BASE,
+  LICENSE,
+  LICENSE_URL,
+  NAME,
+  SOCIAL_LINKS,
+  SOURCE_LINK,
+} from "../config.ts";
 
 const today = new Date();
 ---
@@ -160,6 +167,22 @@ const today = new Date();
           >
             Source
           </a>
+        ) : null
+      }
+      {
+        LICENSE ? (
+          <>
+            <br />
+            <span>Content licensed under </span>
+            <a
+              rel="license"
+              href={LICENSE_URL}
+              target="_blank"
+              class="text-accent-600 hover:text-accent-500 dark:text-accent-500 dark:hover:text-accent-400 font-medium"
+            >
+              {LICENSE}
+            </a>
+          </>
         ) : null
       }
     </p>

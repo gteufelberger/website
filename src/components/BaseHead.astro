@@ -1,5 +1,5 @@
 ---
-import { BASE, SITE_FAVICON } from "../config.ts";
+import { BASE, LICENSE_URL, SITE_FAVICON } from "../config.ts";
 
 interface Props {
   title: string;
@@ -25,6 +25,9 @@ const { title, description, image = "main.png" } = Astro.props;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+
+<!-- Content licence -->
+<link rel="license" href={LICENSE_URL} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
