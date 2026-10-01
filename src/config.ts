@@ -32,6 +32,7 @@ export const SOCIAL_LINKS: {
   EMAIL?: string;
   SHOW_RSS?: boolean;
 } = {
+  GITHUB_URL: "https://github.com/gteufelberger",
   SHOW_RSS: true,
 };
 
