@@ -33,6 +33,7 @@ export const SOCIAL_LINKS: {
   SHOW_RSS?: boolean;
 } = {
   GITHUB_URL: "https://github.com/gteufelberger",
+  LINKEDIN_URL: "https://www.linkedin.com/in/georg-teufelberger",
   SHOW_RSS: true,
 };
 
