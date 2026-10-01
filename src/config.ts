@@ -22,7 +22,6 @@ export const ACCENT_COLOR: AccentColor = "cyan";
 
 // will show all icons that are not empty in the footer as links
 export const SOCIAL_LINKS: {
-  FACEBOOK_URL?: string;
   TWITTER_URL?: string;
   GITHUB_URL?: string;
   INSTAGRAM_URL?: string;
