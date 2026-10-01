@@ -24,7 +24,6 @@ export const ACCENT_COLOR: AccentColor = "cyan";
 export const SOCIAL_LINKS: {
   TWITTER_URL?: string;
   GITHUB_URL?: string;
-  INSTAGRAM_URL?: string;
   LINKEDIN_URL?: string;
   YOUTUBE_URL?: string;
   SUBSTACK_URL?: string;
