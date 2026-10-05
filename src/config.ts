@@ -28,16 +28,17 @@ export const SOCIAL_LINKS: {
   YOUTUBE_URL?: string;
   SUBSTACK_URL?: string;
   EMAIL?: string;
-  SHOW_RSS?: boolean;
 } = {
   GITHUB_URL: "https://github.com/gteufelberger",
   LINKEDIN_URL: "https://www.linkedin.com/in/georg-teufelberger",
-  SHOW_RSS: true,
 };
 
 export const MANUAL_DARK_MODE = true;
 export const SHOW_IMAGES = true;
 export const POSTS_PER_PAGE = 8;
+
+// shows a link to /blog/rss.xml on the blog list pages
+export const SHOW_RSS = true;
 
 // In header, if left blank will instead show SITE_TITLE
 export const SITE_NAME = "";

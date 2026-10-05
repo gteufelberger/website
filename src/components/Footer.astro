@@ -1,6 +1,5 @@
 ---
 import {
-  BASE,
   LICENSE,
   LICENSE_URL,
   NAME,
@@ -122,30 +121,6 @@ const today = new Date();
             >
               <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
               <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
-            </svg>
-          </a>
-        ) : null
-      }
-      {
-        SOCIAL_LINKS.SHOW_RSS ? (
-          <a
-            target="_blank"
-            href={BASE + "/rss.xml"}
-            class="text-base-600 hover:text-base-800 dark:text-base-400 dark:hover:text-base-200"
-          >
-            <span class="sr-only">RSS feed</span>
-
-            <svg
-              class="w-6 h-6"
-              viewBox="-1 -1 22 22"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-            >
-              <rect x="0" fill="none" width="20" height="20" />
-
-              <g>
-                <path d="M14.92 18H18C18 9.32 10.82 2.25 2 2.25v3.02c7.12 0 12.92 5.71 12.92 12.73zm-5.44 0h3.08C12.56 12.27 7.82 7.6 2 7.6v3.02c2 0 3.87.77 5.29 2.16C8.7 14.17 9.48 16.03 9.48 18zm-5.35-.02c1.17 0 2.13-.93 2.13-2.09 0-1.15-.96-2.09-2.13-2.09-1.18 0-2.13.94-2.13 2.09 0 1.16.95 2.09 2.13 2.09z" />
-              </g>
             </svg>
           </a>
         ) : null

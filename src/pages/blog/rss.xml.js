@@ -6,8 +6,8 @@ import {
   NAME,
   LICENSE,
   LICENSE_URL,
-} from "../config.ts";
-import { getBlogPosts } from "../utils";
+} from "../../config.ts";
+import { getBlogPosts } from "../../utils";
 
 export async function GET(context) {
   const posts = await getBlogPosts();
