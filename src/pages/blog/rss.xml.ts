@@ -1,4 +1,5 @@
 import rss from "@astrojs/rss";
+import type { APIContext } from "astro";
 import {
   SITE_TITLE,
   SITE_DESCRIPTION,
@@ -9,7 +10,7 @@ import {
 } from "../../config.ts";
 import { getBlogPosts } from "../../utils";
 
-export async function GET(context) {
+export async function GET(context: APIContext) {
   const posts = await getBlogPosts();
   return rss({
     title: SITE_TITLE,
