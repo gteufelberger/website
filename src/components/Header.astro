@@ -39,6 +39,11 @@ const { active } = Astro.props;
         class="text-sm font-semibold leading-6">Blog</HeaderLink
       >
       <HeaderLink
+        href={BASE + "/projects"}
+        active={active === "projects"}
+        class="text-sm font-semibold leading-6">Projects</HeaderLink
+      >
+      <HeaderLink
         href={BASE + "/about"}
         active={active === "about"}
         class="text-sm font-semibold leading-6">About</HeaderLink
