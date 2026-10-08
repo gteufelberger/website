@@ -30,7 +30,7 @@ const blog = defineCollection({
   loader: blogLoader(),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    description: z.string().optional(),
     pubDate: z.coerce.date(),
     shortDescription: z.string().optional(),
     lastModified: z.coerce.date().optional(),
@@ -47,7 +47,7 @@ const projects = defineCollection({
   }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
+    description: z.string().optional(),
     pubDate: z.coerce.date(),
     lastModified: z.coerce.date().optional(),
     // pins the project to the top of the listing
