@@ -24,7 +24,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "astro": "7.1.6",
     "astro-embed": "^0.14.0",
-    "astro-og-canvas": "0.13.0",
+    "astro-og-canvas": "0.13.2",
     "rehype-mathjax": "^7.1.0",
     "remark-math": "^6.0.0",
     "svelte": "^5.57.1",
