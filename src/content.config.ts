@@ -44,4 +44,25 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const projects = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/projects/",
+  }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    lastModified: z.coerce.date().optional(),
+    // pins the project to the top of the listing
+    featured: z.boolean().optional(),
+    repo: z.url().optional(),
+    url: z.url().optional(),
+    tags: z.array(z.string()).optional(),
+    heroImage: z.string().optional(),
+    published: z.boolean().optional(),
+    hidden: z.boolean().optional(),
+  }),
+});
+
+export const collections = { blog, projects };
