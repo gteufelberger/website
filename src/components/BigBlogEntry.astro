@@ -4,16 +4,15 @@ import FormattedDate from "./FormattedDate.astro";
 import Tag from "./Tag.astro";
 import HeroImage from "./HeroImage.astro";
 
-const { title, description, pubDate, slug, heroImage, tags, noImage } =
-  Astro.props;
+const { title, description, pubDate, slug, heroImage, tags } = Astro.props;
 ---
 
 <article
   class={"relative isolate flex flex-col gap-8 lg:flex-row group mt-8" +
-    (noImage || !SHOW_IMAGES || !heroImage ? "" : " lg:grid lg:grid-cols-2")}
+    (!SHOW_IMAGES || !heroImage ? "" : " lg:grid lg:grid-cols-2")}
 >
   {
-    noImage || !SHOW_IMAGES || !heroImage ? null : (
+    !SHOW_IMAGES || !heroImage ? null : (
       <div class="relative aspect-[16/9] lg:w-full lg:shrink-0">
         <HeroImage image={heroImage} />
       </div>

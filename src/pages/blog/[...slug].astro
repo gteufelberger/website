@@ -11,7 +11,7 @@ import Tag from "$components/Tag.astro";
 import { SHOW_IMAGES } from "../../config.ts";
 
 export async function getStaticPaths() {
-  const posts = await getBlogPosts(true);
+  const posts = await getBlogPosts();
   return posts.map((post: any) => ({
     params: { slug: post.id },
     props: post,
@@ -37,7 +37,7 @@ if (replacedHero && !images[replacedHero])
 
   <main class="max-w-2xl lg:max-w-3xl mx-auto my-0 h-full p-4">
     {
-      replacedHero && post.data.hideHero !== true && SHOW_IMAGES ? (
+      replacedHero && SHOW_IMAGES ? (
         <Image
           src={images[replacedHero]()}
           alt=""
