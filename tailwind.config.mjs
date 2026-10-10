@@ -2,7 +2,7 @@ import prose from "@tailwindcss/typography";
 import forms from "@tailwindcss/forms";
 import plugin from "tailwindcss/plugin";
 import colors from "tailwindcss/colors";
-import { ACCENT_COLOR, BASE_COLOR, MANUAL_DARK_MODE } from "./src/config.ts";
+import { ACCENT_COLOR, BASE_COLOR } from "./src/config.ts";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -33,7 +33,6 @@ export default {
       },
     },
   },
-  darkMode: MANUAL_DARK_MODE ? "class" : "media",
   plugins: [
     prose,
     forms,
