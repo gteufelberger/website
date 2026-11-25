@@ -33,7 +33,11 @@ const pages = posts.reduce(
   {} as Record<string, PageData>,
 );
 
-function hexToRgb(hex: string): [number, number, number] {
+function hexToRgb(hex: string): [
+  number,
+  number,
+  number,
+] {
   return [
     parseInt(hex.slice(1, 3), 16),
     parseInt(hex.slice(3, 5), 16),
@@ -83,17 +87,23 @@ export const { getStaticPaths, GET } = await OGImageRoute({
     font: {
       /** Font style for the page title. */
       title: {
-        families: ["Inter"],
+        families: [
+          "Inter",
+        ],
         color: hexToRgb(accentColor[500]),
         size: 80,
         weight: "SemiBold",
       },
       description: {
-        families: ["Inter"],
+        families: [
+          "Inter",
+        ],
         color: hexToRgb(baseColor[100]),
       },
     },
     padding: 80,
-    fonts: ["./src/assets/fonts/InterVariable.ttf"],
+    fonts: [
+      "./src/assets/fonts/InterVariable.ttf",
+    ],
   }),
 });

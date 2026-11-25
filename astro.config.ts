@@ -21,7 +21,9 @@ import {
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [
+      tailwindcss(),
+    ],
     resolve: {
       alias: {
         $components: resolve("./src/components"),
@@ -35,7 +37,12 @@ export default defineConfig({
     },
   },
 
-  integrations: [embeds(), mdx(), sitemap(), svelte()],
+  integrations: [
+    embeds(),
+    mdx(),
+    sitemap(),
+    svelte(),
+  ],
 
   markdown: {
     shikiConfig: {
@@ -56,8 +63,12 @@ export default defineConfig({
     },
 
     processor: unified({
-      remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeMathjax],
+      remarkPlugins: [
+        remarkMath,
+      ],
+      rehypePlugins: [
+        rehypeMathjax,
+      ],
     }),
   },
 

@@ -1,5 +1,10 @@
 {
-  "plugins": ["prettier-plugin-svelte", "prettier-plugin-astro"],
+  "plugins": [
+    "prettier-plugin-svelte",
+    "prettier-plugin-astro",
+    "prettier-plugin-multiline-arrays"
+  ],
+  "multilineArraysWrapThreshold": 0,
   "overrides": [
     {
       "files": "*.svelte",
