@@ -1,0 +1,16 @@
+---
+import { BASE, SITE_TITLE, SITE_DESCRIPTION } from "../config.ts";
+---
+
+<main class="max-w-2xl lg:max-w-3xl mx-auto mt-16 px-4">
+  <h1 class="text-4xl font-bold text-base-900 dark:text-base-50">
+    {SITE_TITLE}
+  </h1>
+  <p class="mt-4 text-base-600 dark:text-base-400">{SITE_DESCRIPTION}</p>
+  <a
+    href={BASE + "/blog"}
+    class="mt-8 inline-block text-accent-600 dark:text-accent-400 font-semibold hover:underline"
+  >
+    Read the blog →
+  </a>
+</main>
