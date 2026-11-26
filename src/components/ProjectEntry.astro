@@ -1,7 +1,11 @@
 ---
+import { BASE } from "../config.ts";
+
 const { title, slug } = Astro.props;
 ---
 
 <div>
-  {title}
+  <a href={BASE + `/project/${slug}/`}>
+    {title}
+  </a>
 </div>
