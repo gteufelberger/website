@@ -1,5 +1,10 @@
 ---
 import { BASE, SITE_TITLE, SITE_DESCRIPTION } from "../config.ts";
+import { getProjects } from "../utils";
+import ProjectList from "$layouts/ProjectList.astro";
+import ProseWrapper from "./ProseWrapper.astro";
+
+const projects = await getProjects();
 ---
 
 <main class="max-w-2xl lg:max-w-3xl mx-auto mt-16 px-4">
@@ -7,10 +12,18 @@ import { BASE, SITE_TITLE, SITE_DESCRIPTION } from "../config.ts";
     {SITE_TITLE}
   </h1>
   <p class="mt-4 text-base-600 dark:text-base-400">{SITE_DESCRIPTION}</p>
+  <ProseWrapper>
+    <h2>Blog</h2>
+  </ProseWrapper>
   <a
     href={BASE + "/blog"}
     class="mt-8 inline-block text-accent-600 dark:text-accent-400 font-semibold hover:underline"
   >
     Read the blog →
   </a>
+  <hr />
+  <ProseWrapper>
+    <h2>Projects</h2>
+  </ProseWrapper>
+  <ProjectList {projects} />
 </main>
