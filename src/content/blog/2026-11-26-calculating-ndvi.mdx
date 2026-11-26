@@ -1,0 +1,28 @@
+---
+title: "Using remote sensing to estimate plant health"
+description: "How to calculate NDVI"
+tags: [remote sensing]
+---
+
+Satellites are cool.
+Thanks to measurements done by satellites orbiting our planet, we can estimate plant health from space!
+
+To do this, we can make use of a value called _normialised difference vegetation index_, or NDVI for short.
+
+For this we only need two channels, red and near-infrared.
+The reason we use those two is that when plants are active, i.e. they perform photosynthesis, they absorb most of the red light.
+At the same time plants strongly reflect near-infrared light due to their cell structure.
+
+This means that a low energy signal on the red band and a high energy signal on the near-infrared implies a healthy plant.
+Neat!
+
+To actually calculate NDVI we use the following formula:
+
+$$
+\text{NDVI} = \frac{\text{near-infrared} - \text{red}}{\text{near-infrared} + \text{red}}
+$$
+
+This gives us a value between $-1$ and $+1$, where $+1$ implies a very healthy (active) plant while values closer to $-1$ mean a dead plant or non-plant object like rocks and water.
+
+Comparing these values with the visible light bands can show as whether what looks to be a green and healthy forest is actually healthy or not.
+Cool!
