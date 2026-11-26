@@ -5,7 +5,7 @@ export const BASE = "";
 
 export const SITE_TITLE = "Georg's Website";
 export const SITE_DESCRIPTION = "";
-export const SITE_FAVICON = "🛰️";
+export const SITE_FAVICON = "🛰️🌍";
 
 // Footer
 // (c) <YEAR> <NAME> - LICENSE
