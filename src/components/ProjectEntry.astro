@@ -1,10 +1,20 @@
 ---
-import { BASE } from "../config.ts";
+import { BASE, SHOW_IMAGES } from "../config.ts";
+import HeroImage from "./HeroImage.astro";
 
-const { title, slug } = Astro.props;
+const { title, slug, heroImage } = Astro.props;
 ---
 
-<div>
+<div
+  class="flex items-center gap-6 border border-base-300 dark:border-base-700 rounded-2xl p-4"
+>
+  {
+    !SHOW_IMAGES || !heroImage ? null : (
+      <div class="relative aspect-[16/9] w-40 shrink-0">
+        <HeroImage image={heroImage} />
+      </div>
+    )
+  }
   <a href={BASE + `/project/${slug}/`}>
     {title}
   </a>
