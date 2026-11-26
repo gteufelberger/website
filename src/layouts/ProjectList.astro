@@ -15,7 +15,7 @@ const { projects } = Astro.props;
   </ProseWrapper>
 </div>
 
-<div class="my-14 space-y-16 max-w-3xl">
+<div class="my-14 flex flex-wrap gap-6 max-w-3xl">
   {
     projects.map((project: any) => (
       <ProjectEntry {...project.data} slug={project.id} />
