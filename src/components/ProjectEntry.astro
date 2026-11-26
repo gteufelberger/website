@@ -5,17 +5,17 @@ import HeroImage from "./HeroImage.astro";
 const { title, slug, heroImage } = Astro.props;
 ---
 
-<div
-  class="flex items-center gap-6 border border-base-300 dark:border-base-700 rounded-2xl p-4"
->
-  {
-    !SHOW_IMAGES || !heroImage ? null : (
-      <div class="relative aspect-[16/9] w-40 shrink-0">
-        <HeroImage image={heroImage} />
-      </div>
-    )
-  }
-  <a href={BASE + `/project/${slug}/`}>
+<a href={BASE + `/project/${slug}/`}>
+  <div
+    class="flex items-center gap-6 border border-base-300 dark:border-base-700 rounded-2xl p-4"
+  >
+    {
+      !SHOW_IMAGES || !heroImage ? null : (
+        <div class="relative aspect-[16/9] w-40 shrink-0">
+          <HeroImage image={heroImage} />
+        </div>
+      )
+    }
     {title}
-  </a>
-</div>
+  </div>
+</a>
