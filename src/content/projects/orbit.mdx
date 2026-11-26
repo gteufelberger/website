@@ -1,0 +1,25 @@
+---
+title: "Orbit"
+pubDate: 2026-11-26
+heroImage: "../../assets/projects/orbit/screenshot.png"
+description: "Calculating satellite orbits and properties"
+---
+
+As part of my internships in 2025, I got the opportunity to model satellites and their operational properties in software.
+
+There already existed some logic for it though the current limitation was the computation speed of the existing system.
+When I joined the possibility of rewriting the codebase in a systems programming language was mentioned and so after doing some research I pitched rewriting the project in [Rust](https://rust-lang.org/).
+
+The result was a new system that gave around 80x speed-up, turning calculations that took minutes, into just seconds.
+
+While I cannot share any of the work I did as it's property of my previous employer, I did have another go at it a year later in my own free time to build a similar (but different!) implementation again from scratch using the skills I have acquired since.
+
+And after a weekend of writing some code together Orbit was born.
+
+It is a simplified version that follows a similar idea however with the twist that all calculations are done client side in the user's browser using [WebAssembly](https://webassembly.org/).
+
+Of course, as this was just weekend project, it's mostly just a demo to show around whenever someone asks me what I worked on during that time.
+
+You can check out the implementation here: https://orbit.teufelberger.dev/
+
+The corresponding source code for it can be found here: https://github.com/gteufelberger/orbit
