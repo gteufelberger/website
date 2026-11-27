@@ -1,0 +1,9 @@
+---
+// Simply shows the latest blog post
+import BigBlogEntry from "$components/BigBlogEntry.astro";
+import { getBlogPosts } from "../utils";
+
+const posts = await getBlogPosts();
+---
+
+<BigBlogEntry {...posts[0].data} slug={posts[0].id} />
