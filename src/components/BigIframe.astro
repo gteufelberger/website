@@ -1,0 +1,8 @@
+---
+type Props = {
+  url: string;
+};
+const { url } = Astro.props;
+---
+
+<iframe src={url} class="w-full aspect-video rounded-xl"></iframe>
