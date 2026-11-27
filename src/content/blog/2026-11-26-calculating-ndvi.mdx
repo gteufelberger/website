@@ -3,6 +3,7 @@ title: "Using remote sensing to estimate plant health"
 description: "How to calculate NDVI"
 heroImage: "../../assets/posts/2026-ndvi/zurich-ndvi.png"
 tags: [remote sensing]
+lastModified: 2026-11-27
 ---
 
 Satellites are cool.
@@ -27,3 +28,9 @@ This gives us a value between $-1$ and $+1$, where $+1$ implies a very healthy (
 
 Comparing these values with the visible light bands can show as whether what looks to be a green and healthy forest is actually healthy or not.
 Cool!
+
+To see it in action you can use for example the [Copernicus browser](https://browser.dataspace.copernicus.eu/) which gives you access to public satellite data and allows you to look at specific preprocessed layers, such as NDVI.
+
+import BigIframe from "$components/BigIframe.astro";
+
+<BigIframe url="https://browser.dataspace.copernicus.eu/?zoom=12&lat=47.40683&lng=8.52144&themeId=DEFAULT-THEME&visualizationUrl=U2FsdGVkX19wkI0UYMxOTbl6QUFRMLL1wvE2AifvxTR0g7UB4dyRaYGF1Mke5kSVdEoJfEjMbFSRiruI7vdXo3k%2B6LV2V%2F9iqy%2BY5qixaNtyEh9g5HlOWVxB3dG%2B1dpE&datasetId=S2_L2A_CDAS&fromTime=2026-10-27T00%3A00%3A00.000Z&toTime=2026-10-27T23%3A59%3A59.999Z&layerId=3_NDVI&demSource3D=%22MAPZEN%22&cloudCoverage=0&dateMode=SINGLE&panel=layers" />
