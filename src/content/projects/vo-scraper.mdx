@@ -1,0 +1,44 @@
+---
+title: "vo-scraper"
+description: "Mass downloading lectures to save time"
+pubDate: 2024-12-28
+lastModified: 2026-11-27
+---
+
+## The backstory
+
+It was all the way back in 2017 when I started my studies. Ancient times.
+Back then a kind fellow classmate (sorry I don't remember your name anymore) in my studies wrote a little Python scraper to download some lecture recordings from the university's [video-on-demand platform](https://video.ethz.ch/).
+A neat little tool but not really interesting for someone who preferred going to classes in person.
+
+However, two years later this would change when I signed up to a seminar for a subject that I hadn't even had a lecture for it.
+The reason being that all other seminars were booked out and this was my only option to get the compulsory credit without having to spend another year in my Bachelor.
+
+So thanks to lecture recordings I could catch up on the subject.
+Now the university video platform video player was a bit limited in terms of adjusting playback speed (2.5x go brrrr) so I resorted to downloading the videos and using [VLC](https://www.videolan.org/vlc/) instead.
+
+Now clicking downloading 14 videos by hand was annoying and I'd rather automate that process which is when I remembered the Python script again.
+
+## Covid and release
+
+Less than a half a year later and we reached early 2020 and [Covid](https://en.wikipedia.org/wiki/COVID-19) hit and with quarantine laws everything went from in-person teaching to online.
+Either through live lessons via Zoom or through pre-recorded videos.
+
+Suddenly the niche Python script became very useful.
+However the university website also changed, breaking the script.
+So taking matters into my own hand, I rewrote the script from scratch to clean it up and support the new website.
+I [published the source code on the university GitLab server](https://gitlab.ethz.ch/tgeorg/vo-scraper) and it became the second highest starred repository :)
+
+I made heavy use of the script myself, adding features and quality-of-life improvements I deemed useful, all still wrapped into a single python script.
+
+## Legacy
+
+At some point my studies ended and so I also stopped using the script myself.
+It seems others still relied heavily on it so I'd occasionally update it myself.
+
+Since then the website was updated once again and the script is no longer functional.
+That however didn't stop others from [creating their own version](https://isakov.uk/en/blog/2025-11-05__announcing_eth_video_scraper.html).
+
+Glad to see it live on in different forms :)
+
+You can check the (now broken) source code here: https://github.com/gteufelberger/vo-scraper
